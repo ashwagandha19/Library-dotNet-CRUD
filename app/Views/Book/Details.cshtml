@@ -1,0 +1,66 @@
+﻿@model Book
+
+<h2>Book details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.book_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.book_name)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.book_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.book_description)
+        </dd>
+    </dl>
+     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.genre)
+        </dd>
+    </dl>
+     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.language)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.language)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.no_of_pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.no_of_pages)
+        </dd>
+    </dl>
+        <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.img_url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model =>  model.img_url)
+        </dd>
+    </dl>
+</div>
+<p>
+    <div class="w-75 btn-group" role="group">
+       @Html.ActionLink("Back to books", "Index")
+    </div>
+</p>

@@ -1,0 +1,56 @@
+﻿@model Book
+
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Edit Category</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="book_name"></label>
+			<input asp-for="book_name" class="form-control" />
+			<span asp-validation-for="book_name" class="text-danger"></span>
+		</div>
+		 <div class="mb-3">
+             <!--bining everything with category model-->
+             <label asp-for="book_description">Description</label>
+             <input asp-for="book_description" />
+             <span asp-validation-for="book_description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+             <!--bining everything with category model-->
+             <label asp-for="genre">Genre</label>
+             <input asp-for="genre" />
+             <span asp-validation-for="genre" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+             <!--bining everything with category model-->
+             <label asp-for="language">Language</label>
+             <input asp-for="language" />
+             <span asp-validation-for="language" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+             <!--bining everything with category model-->
+             <label asp-for="img_url">Img_url</label>
+             <input asp-for="img_url" />
+             <span asp-validation-for="img_url" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+             <!--bining everything with category model-->
+             <label asp-for="no_of_pages">No_of_pages</label>
+             <input asp-for="no_of_pages" />
+             <span asp-validation-for="no_of_pages" class="text-danger"></span>
+        </div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+		<a asp-controller="Book" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

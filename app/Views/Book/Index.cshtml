@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Book List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Book" asp-action="Create" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Book
+            </a>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>
+
+<table class="table table-bordered table-striped w-auto">
+    <thead>
+       <tr>
+           <th>
+               Book Id
+           </th>
+           <th>
+               Book Name
+           </th>
+            <th>
+               Genre
+           </th>
+           <th>
+               Language
+           </th>
+           <th>
+               Description
+           </th>
+           <th>
+               Img_url
+           </th>
+           <th>
+               No_of_pages
+           </th>
+           <th>
+               Actions
+           </th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.book_id
+                </td>
+                 <td>
+                    @obj.book_name
+                </td>
+                <td>
+                    @obj.genre
+                </td>
+                <td>
+                    @obj.language
+                </td>
+                <td>
+                    @obj.book_description
+                </td>
+                <td>
+                    @obj.img_url
+                </td>
+                <td>
+                    @obj.no_of_pages
+                </td>
+                <td>
+                        <a asp-controller="Book" asp-action="Details" asp-route-id="@obj.book_id" class="btn btn-secodnary mx-2">
+                            <i class="bi bi-eye-fill"></i>Details
+                        </a>
+                        <a asp-controller="Book" asp-action="Edit" asp-route-id="@obj.book_id" class="btn btn-secodnary mx-2">
+                            <i class="bi bi-pen-fill"></i> Edit
+                        </a>
+                        <a asp-controller="Book" asp-action="Delete" asp-route-id="@obj.book_id" class="btn btn-secodnary mx-2">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
